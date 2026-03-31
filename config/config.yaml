@@ -1,0 +1,13 @@
+# LLM Configuration
+# Set default_provider to "groq" or "openai" to switch between models
+
+llm:
+  default_provider: "groq"
+
+  groq:
+    provider: "groq"
+    model_name: "deepseek-r1-distill-llama-70b"  # Fast & free Groq model
+
+  openai:
+    provider: "openai"
+    model_name: "o4-mini"                         # OpenAI model

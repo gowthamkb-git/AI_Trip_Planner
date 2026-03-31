@@ -51,10 +51,17 @@ AI_Trip_Planner/
 │   ├── place_info.py             # Place info helper
 │   ├── calculator.py             # Calculator helper
 │   └── save_to_document.py      # Saves summarised trip report
+├── logger/
+│   ├── __init__.py
+│   └── logging_config.py         # App-wide logging configuration
+├── exception/
+│   ├── __init__.py
+│   └── custom_exception.py       # Custom exception handling
 ├── app.py                        # Application entry point
 ├── main.py                       # Main runner
 ├── .env                          # Environment variables (secrets)
 ├── .env.name                     # Env variable template
+├── setup.py                      # Package setup & dependencies
 ├── pyproject.toml                # Project dependencies
 └── requirements.txt              # Python dependencies
 ```

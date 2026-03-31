@@ -1,7 +1,32 @@
 [project]
 name = "ai-trip-planner"
 version = "0.1.0"
-description = "Add your description here"
+description = "An Agentic AI Trip Planner application"
 readme = "README.md"
-requires-python = ">=3.13"
-dependencies = []
+requires-python = ">=3.10"
+authors = [
+    { name = "Gowtham K B", email = "gowthamkb2002@gmail.com" }
+]
+dependencies = [
+    "langchain",
+    "langchain-community",
+    "langchain-experimental",
+    "fastapi",
+    "python-dotenv",
+    "streamlit",
+    "uvicorn",
+    "pydantic",
+    "httpx",
+    "requests",
+    "langchain_google_community",
+    "langchain_tavily",
+    "langchain_groq",
+    "langchain_openai",
+    "langgraph",
+    "langchain-google-community[places]",
+    "openai",
+    "groq",
+    "langsmith",
+    "pyyaml",
+    "python-docx",
+]
