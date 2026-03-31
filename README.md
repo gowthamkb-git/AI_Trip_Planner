@@ -19,6 +19,8 @@ An Agentic AI application that helps users plan trips worldwide by providing rea
 - **Weather** - OpenWeatherMap
 - **Currency** - Exchange Rate API
 - **Tracing** - LangSmith
+- **Backend** - FastAPI
+- **Frontend** - Streamlit
 
 ## Project Structure
 
@@ -26,39 +28,39 @@ An Agentic AI application that helps users plan trips worldwide by providing rea
 AI_Trip_Planner/
 ├── agent/
 │   ├── __init__.py
-│   └── agentic_workflow.py       # Agentic workflow logic
+│   └── agentic_workflow.py       # Agentic workflow logic (LangGraph)
 ├── config/
 │   ├── __init__.py
-│   └── config.yml                # App configuration
-├── notebooks/
+│   └── config.yaml               # App configuration (LLM providers)
+├── notebook/
 │   └── experiments.ipynb         # Experimentation & prototyping
 ├── prompt_library/
 │   ├── __init__.py
 │   └── prompt.py                 # Prompt templates
 ├── tools/
 │   ├── __init__.py
-│   ├── weather.py                # Real-time weather tool
-│   ├── place_search.py           # Place search & attractions tool
-│   ├── currency_converter.py     # Currency conversion tool
-│   ├── calculator.py             # Cost calculation tool
-│   └── arithmetic_operation.py  # Arithmetic operations tool
+│   ├── weather_info_tool.py      # Real-time weather tool
+│   ├── place_search_tool.py      # Place search & attractions tool
+│   ├── currency_conversion_tool.py  # Currency conversion tool
+│   ├── expense_calculator_tool.py   # Cost calculation tool
+│   └── arthamatic_op_tool.py    # Arithmetic operations tool
 ├── utils/
 │   ├── __init__.py
 │   ├── model_loader.py           # LLM model loader
 │   ├── config_loader.py          # Config loader
-│   ├── weather.py                # Weather helper
+│   ├── weather_info.py           # Weather helper
 │   ├── currency_converter.py     # Currency converter helper
-│   ├── place_info.py             # Place info helper
-│   ├── calculator.py             # Calculator helper
+│   ├── place_info_search.py      # Place info helper
+│   ├── expense_calculator.py     # Calculator helper
 │   └── save_to_document.py      # Saves summarised trip report
 ├── logger/
 │   ├── __init__.py
-│   └── logging_config.py         # App-wide logging configuration
+│   └── logging.py                # App-wide logging configuration
 ├── exception/
 │   ├── __init__.py
-│   └── custom_exception.py       # Custom exception handling
-├── app.py                        # Application entry point
-├── main.py                       # Main runner
+│   └── exceptiohandling.py       # Custom exception handling
+├── main.py                       # FastAPI backend entry point
+├── streamlit_app.py              # Streamlit frontend entry point
 ├── .env                          # Environment variables (secrets)
 ├── .env.name                     # Env variable template
 ├── setup.py                      # Package setup & dependencies
@@ -70,7 +72,7 @@ AI_Trip_Planner/
 
 1. Clone the repository
 ```bash
-git clone <repo_url>
+git clone https://github.com/gowthamkb-git/AI_Trip_Planner.git
 cd AI_Trip_Planner
 ```
 
@@ -91,9 +93,14 @@ cp .env.name .env
 # Fill in your API keys in .env
 ```
 
-5. Run the application
+5. Run the FastAPI backend
 ```bash
-python app.py
+uvicorn main:app --reload
+```
+
+6. Run the Streamlit frontend
+```bash
+streamlit run streamlit_app.py
 ```
 
 ## Environment Variables
